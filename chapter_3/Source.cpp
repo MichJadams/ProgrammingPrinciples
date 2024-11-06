@@ -1,9 +1,7 @@
 #include "std_lib_facilities.h"
 
-/*
 int main()
-{ 
-	cout << "Hello, programming! \nHere we go!";
+{
+	cout << "somewhere else!";
 	return 0;
 }
-*/
