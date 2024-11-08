@@ -13,7 +13,7 @@ int age_prompt()
 
 	return age;
 }
-
+/*
 int main()
 {
 	string first_name = "";
@@ -69,3 +69,5 @@ int main()
 
 	return 0;
 }
+*/
+
