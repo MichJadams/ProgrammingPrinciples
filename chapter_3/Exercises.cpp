@@ -127,7 +127,6 @@ int main()
 
 	cout << lowest << ", " << middle << ", " << highest; 
 }
-*/
 
 int main()
 {
@@ -159,7 +158,74 @@ int main()
 		word1 = temp;
 	}
 
-
 	cout << word1 << ", " << word2 << ", " << word3;
 	return 0;
+}
+
+int main()
+{
+	// finding even and odd 
+	int user_input = 0;
+	cout << "Please type in a integer\n";
+	cin >> user_input; 
+
+	if (user_input % 2 == 0)
+	{
+		cout << user_input << " is even!";
+	}
+	else
+	{
+		cout << user_input << " is odd!";
+	}
+
+	return 0;
+}
+
+int main()
+{
+	// spells out number 
+	string user_input = "";
+	cout << "Spell out a number between 0 and 4\n";
+	cin >> user_input;
+
+	if (user_input == "zero")
+	{
+		cout << "0";
+	}
+	else if (user_input == "one")
+	{
+		cout << "1";
+
+	}
+	else if (user_input == "two")
+	{
+		cout << "2";
+
+	}
+	else if (user_input == "three")
+	{
+		cout << "3";
+
+	}
+	else if (user_input == "four")
+	{
+		cout << "4";
+	}
+	else
+	{
+		cout << "not a number I know :(";
+	}
+	return 0;
+}
+*/
+
+int main()
+{
+	// operation followed by two operands and computs the result
+	string operation = "";
+	double operand1 = 0;
+	double operand2 = 0;
+	cout << "Please input an operant followed by two numbers\n";
+
+
 }
