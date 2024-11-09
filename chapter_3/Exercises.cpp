@@ -46,7 +46,6 @@ int main()
 
 	return 0;
 }
-*/
 
 int main()
 {
@@ -123,8 +122,44 @@ int main()
 	}
 
 	// There is probably a much easier way to do this with functions 
-	// but I'm not sure what it is... 
+	// but I'm not sure what it is... (oh, I figured it out down below in a 
+	// waaay better way lol. yay!
 
 	cout << lowest << ", " << middle << ", " << highest; 
+}
+*/
 
+int main()
+{
+	// sorting names 
+	string word1 = "";
+	string word2 = "";
+	string word3 = "";
+	cout << "Please input three words";
+	cin >> word1 >> word2 >> word3;
+
+	if (word1 > word2)
+	{
+		string temp = word2; 
+		word2 = word1; 
+		word1 = temp; 
+	}
+
+	if (word2 > word3) 
+	{
+		string temp = word3; 
+		word3 = word2; 
+		word2 = temp;
+	}
+
+	if (word1 > word2)
+	{
+		string temp = word2;
+		word2 = word1;
+		word1 = temp;
+	}
+
+
+	cout << word1 << ", " << word2 << ", " << word3;
+	return 0;
 }
