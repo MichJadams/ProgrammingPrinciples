@@ -217,7 +217,6 @@ int main()
 	}
 	return 0;
 }
-*/
 
 int main()
 {
@@ -226,6 +225,66 @@ int main()
 	double operand1 = 0;
 	double operand2 = 0;
 	cout << "Please input an operant followed by two numbers\n";
+	cin >> operation >> operand1 >> operand2;
 
+	if (operation == "+")
+	{
+		cout << operand1 + operand2;
+	} else 	if (operation == "-")
+	{
+		cout << operand1 - operand2;
+	} else 	if (operation == "*")
+	{
+		cout << operand1 * operand2;
+	} else 	if (operation == "/")
+	{
+		cout << operand1 / operand2;
+	}
+	else {
+		cout << "Malformed input";
+	}
 
+	return 0;
+}
+*/
+
+int query(string denomination)
+{
+	int coins_in = 0;
+	cout << "How many " << denomination << " do you have ?\n";
+	cin >> coins_in;
+	return coins_in;
+}
+
+int read_out(string denomination, string singular, int number_of_coins)
+{
+	if (number_of_coins == 1)
+	{
+		cout << "\nYou have " << number_of_coins << " " << singular;
+	}
+	else {
+		cout << "\nYou have " << number_of_coins << " " << denomination;
+	}
+
+	return 0;
+}
+
+int main()
+{
+	int pennies = query("pennies");
+	int nickles = query("nickles");
+	int dimes = query("dimes");
+	int quarters = query("quarters");
+	int half_dollar = query("half dollars");
+
+	read_out("pennies", "penny", pennies);
+	read_out("nickeles", "nickel", nickles);
+	read_out("dimes", "dime", dimes);
+	read_out("quarters", "quarter", quarters);
+	read_out("half dollars", "half dollar", half_dollar);
+
+	double total = pennies + (nickles * 5) + (dimes * 10) + (quarters * 25) + (half_dollar * 50);
+	cout << "\n\nThe value of all of your coins is " << int(total) << " cents";
+	double total_in_dollars = total / 100.0;
+	cout << "\n\n And you have $" << total_in_dollars << " dollars";
 }
