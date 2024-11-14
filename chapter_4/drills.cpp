@@ -46,7 +46,6 @@ int main()
 		}
 	}
 }
-*/
 
 
 // 6 
@@ -76,4 +75,55 @@ int main()
 		cin >> current;
 
 	}
+}
+*/
+
+
+constexpr double meter_to_cm = 100; 
+constexpr double inch_to_cm = 2.54; 
+constexpr double ft_to_inch = 12; 
+
+double to_meters(double input, string unit)
+{
+	if (unit == "cm") {
+		return input / 100; 
+	}
+	else if (unit == "in")
+	{
+		return input * inch_to_cm / 100; 
+	}
+	else if (unit == "m")
+	{
+		return input;
+
+	}
+	else if (unit == "ft")
+	{
+		return input * ft_to_inch / 100;
+
+	}
+	else
+	{
+
+	}
+
+
+}
+
+int main()
+{
+
+	double first;
+	string first_unit; 
+	double second; 
+	string second_unit;
+
+	cin >> first >> first_unit >> second >> second_unit; 
+	while (cin)
+	{
+		
+	}
+
+
+	return 0; 
 }
