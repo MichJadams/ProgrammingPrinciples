@@ -116,10 +116,12 @@ int main()
 	double largest;
 	double smallest;
 	double sum_of_meters = 0.0;
+	vector<double> all_values_entered; 
 
 	cout << "input a list of numbers and units seperated by spaces: \n";
 	cin >> first >> first_unit; 
 	double in_meters = to_meters(first, first_unit);
+	all_values_entered.push_back(in_meters);
 	largest = in_meters;
 	smallest = in_meters;
 	sum_of_meters += in_meters;
@@ -130,6 +132,7 @@ int main()
 		{
 			cin >> first >> first_unit;
 			double in_meters = to_meters(first, first_unit);
+			all_values_entered.push_back(in_meters);
 			sum_of_meters += in_meters; 
 			if (in_meters < smallest)
 			{
@@ -151,5 +154,11 @@ int main()
 	cout << "\n Largest: " << largest <<"m";
 	cout << "\n Smallest: " << smallest << "m";
 	cout << "\n Sum: " << sum_of_meters << "m";
+	sort(all_values_entered);
+	for (double val : all_values_entered)
+	{
+		cout << val << "\n";
+	}
+
 	return 0; 
 }
