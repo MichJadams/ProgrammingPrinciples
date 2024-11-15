@@ -1,5 +1,5 @@
 #include "std_lib_facilities.h"
-
+/*
 int main()
 {
 	vector<double> temps;
@@ -24,3 +24,4 @@ int main()
 	}
 	cout << "The median is: " << median; 
 }
+*/

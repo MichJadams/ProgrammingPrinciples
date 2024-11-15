@@ -76,7 +76,6 @@ int main()
 
 	}
 }
-*/
 
 
 constexpr double meter_to_cm = 100.0; 
@@ -110,8 +109,8 @@ double to_meters(double input, string unit)
 int main()
 {
 
-	double first;
-	string first_unit; 
+	double first = 0;
+	string first_unit = "";
 
 	double largest;
 	double smallest;
@@ -119,18 +118,31 @@ int main()
 	vector<double> all_values_entered; 
 
 	cout << "input a list of numbers and units seperated by spaces: \n";
-	cin >> first >> first_unit; 
-	double in_meters = to_meters(first, first_unit);
-	all_values_entered.push_back(in_meters);
-	largest = in_meters;
-	smallest = in_meters;
-	sum_of_meters += in_meters;
+	try {
+		cin >> first >> first_unit; 
+		double in_meters = to_meters(first, first_unit);
+		all_values_entered.push_back(in_meters);
+		largest = in_meters;
+		smallest = in_meters;
+		sum_of_meters += in_meters;
+
+	}
+	catch (std::exception &e)
+	{
+		smallest = 0;
+		largest = 0;
+		cout << "exiting, all values set to zero"; 
+	}
 
 	while (cin)
 	{
 		try
 		{
 			cin >> first >> first_unit;
+			if (!cin)
+			{
+				break;
+			}
 			double in_meters = to_meters(first, first_unit);
 			all_values_entered.push_back(in_meters);
 			sum_of_meters += in_meters; 
@@ -162,3 +174,4 @@ int main()
 
 	return 0; 
 }
+*/
