@@ -79,35 +79,32 @@ int main()
 */
 
 
-constexpr double meter_to_cm = 100; 
+constexpr double meter_to_cm = 100.0; 
 constexpr double inch_to_cm = 2.54; 
-constexpr double ft_to_inch = 12; 
+constexpr double ft_to_inch = 12.0; 
 
 double to_meters(double input, string unit)
 {
-	if (unit == "cm") {
-		return input / 100; 
+	if (unit == "cm") 
+	{
+		return input / 100.0; 
 	}
 	else if (unit == "in")
 	{
-		return input * inch_to_cm / 100; 
+		return (input * inch_to_cm) / 100.0; 
 	}
 	else if (unit == "m")
 	{
 		return input;
-
 	}
 	else if (unit == "ft")
 	{
-		return input * ft_to_inch / 100;
-
+		return (input * ft_to_inch * inch_to_cm) / 100.0;
 	}
 	else
 	{
-
+		throw std::runtime_error("non valid unit");
 	}
-
-
 }
 
 int main()
@@ -115,15 +112,44 @@ int main()
 
 	double first;
 	string first_unit; 
-	double second; 
-	string second_unit;
 
-	cin >> first >> first_unit >> second >> second_unit; 
+	double largest;
+	double smallest;
+	double sum_of_meters = 0.0;
+
+	cout << "input a list of numbers and units seperated by spaces: \n";
+	cin >> first >> first_unit; 
+	double in_meters = to_meters(first, first_unit);
+	largest = in_meters;
+	smallest = in_meters;
+	sum_of_meters += in_meters;
+
 	while (cin)
 	{
-		
+		try
+		{
+			cin >> first >> first_unit;
+			double in_meters = to_meters(first, first_unit);
+			sum_of_meters += in_meters; 
+			if (in_meters < smallest)
+			{
+				smallest = in_meters;
+			}
+			if (in_meters > largest)
+			{
+				largest = in_meters;
+			}
+
+		}
+		catch (std::exception &e)
+		{
+			break; 
+		}
 	}
 
-
+	cout << "\n\n ----- Here are the result ----";
+	cout << "\n Largest: " << largest <<"m";
+	cout << "\n Smallest: " << smallest << "m";
+	cout << "\n Sum: " << sum_of_meters << "m";
 	return 0; 
 }
