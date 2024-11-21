@@ -25,7 +25,6 @@ int main()
 	}
 	cout << "The median is: " << median; 
 }
-*/
 
 // Question 3 
 int main()
@@ -62,3 +61,35 @@ int main()
 	cout << "\nThe mean distance between all cities = " << mean_distance_between_all_cities;
 	
 }
+
+// Question 4
+int main()
+{
+	cout << "Hold a number in your head and I will try to guess it\n";
+	cout << "Ready? (hit enter)";
+	int guess = 50;
+	string answer;
+
+	for(int i = 0; i < 7; ++i)
+	{
+		cout << "Is the number " << guess << " or greater or less than?\n";
+
+		cin >> answer; 
+		if (answer == "less")
+		{
+			guess = guess / 2;
+		}
+		else if (answer == "greater")
+		{
+			guess = guess + ((100 - guess) / 2);
+		}
+		else if (answer == "correct")
+		{
+			cout << "Whoot I got it in only " << i << " guesses!";
+			break;
+		}
+	}
+}
+*/
+
+// Question 5 
