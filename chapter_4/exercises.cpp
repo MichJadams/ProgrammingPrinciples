@@ -134,3 +134,24 @@ int main()
 }
 */
 
+// Questions 6 
+// program that spells out number e.g. 7 becomes 7 using a vector 
+
+int main()
+{
+	vector<string> numbers = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+	int input = 0; 
+	cout << "gimme the numbers! \n";
+	while (cin)
+	{
+		cin >> input; 
+		if (input <= 9 && input >= 0)
+		{
+			cout << "no sanitization! " << input << " becomes " << numbers[input] << "\n";
+		} 
+		else
+		{
+			cout << "Ope, can't count that hight.... Try again!\n";
+		}
+	}
+}
