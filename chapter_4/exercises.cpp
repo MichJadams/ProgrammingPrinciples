@@ -90,6 +90,47 @@ int main()
 		}
 	}
 }
+
+// Question 5 very simple calculator 
+
+int main()
+{
+	double first_input = 0; 
+	double second_input = 0; 
+	string operand = "";
+	double result = 0;
+
+	cout << "input two numbers with either +, -, / or * \n";
+	cin >> first_input >> operand >> second_input; 
+
+	if (operand == "+")
+	{
+		result = first_input + second_input;
+
+	}
+	else if (operand == "-")
+	{
+		result = first_input - second_input;
+
+	}
+	else if (operand == "/")
+	{ 
+		if (second_input == 0)
+		{
+			cout << "Ope, can't divide by zero!\n";
+		}
+		else 
+		{
+			result = first_input / second_input;
+		}
+	}
+	else if (operand == "*")
+	{
+		result = first_input * second_input;
+
+	}
+	cout << result; 
+	return 0; 
+}
 */
 
-// Question 5 
