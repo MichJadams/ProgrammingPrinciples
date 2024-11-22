@@ -205,11 +205,44 @@ int main()
 
 	cout << "The result is " << output;
 }
-*/
 
 // Question 8 grains of rice 
 
 int main()
 {
+	int square = 1; 
+	int grains_of_rice = 1;
+	int target_rice_count_thousand = 1000; 
+	int target_rice_count_million = 1000000;
+	int target_rice_count_billion = 1000000000;
+	int squares_for_thousand = 0; 
+	int squares_for_million = 0;
+	int squares_for_billion = 0;
 
+	while (grains_of_rice > 0 && squares_for_billion == 0)
+	{
+		grains_of_rice = grains_of_rice * 2;
+
+		if (grains_of_rice >= target_rice_count_thousand && squares_for_thousand == 0)
+		{
+			squares_for_thousand = square;
+			cout << "For a thousand grains of rice " << squares_for_thousand << grains_of_rice << "\n";
+		}
+
+		if (grains_of_rice >= target_rice_count_million && squares_for_million == 0)
+		{
+			squares_for_million = square;
+			cout << "For a million grains of rice " << squares_for_million << grains_of_rice << "\n";
+		}
+
+		if (grains_of_rice >= target_rice_count_billion && squares_for_billion == 0)
+		{
+			squares_for_billion = square;
+			cout << "For a billion grains of rice " << squares_for_billion << grains_of_rice << "\n";
+		}
+		++square;
+	}
 }
+*/
+ // Questions 9 
+// calculate grains of rice until overflow 
