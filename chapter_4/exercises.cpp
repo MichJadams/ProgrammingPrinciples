@@ -132,7 +132,6 @@ int main()
 	cout << result; 
 	return 0; 
 }
-*/
 
 // Questions 6 
 // program that spells out number e.g. 7 becomes 7 using a vector 
@@ -154,4 +153,63 @@ int main()
 			cout << "Ope, can't count that hight.... Try again!\n";
 		}
 	}
+}
+
+// 7 Modify the calculator from above to accept single spelled out digits
+int main()
+{
+	vector<string> numbers = { "zero","one", "two", "three", "four", "five", "six" , "seven", "eight", "nine", "ten" };
+	string first_input = "";
+	string operand = "+";
+	string second_input = "";
+
+	cout << "Spell out two numbers and and +, -, * or / and I will do that operation \n";
+
+	cin >> first_input >> operand >> second_input; 
+
+	int first_number = 0; 
+	int second_number = 0; 
+	int output = 0;
+	for (int i = 0; i < numbers.size(); ++i)
+	{
+		if (numbers[i] == first_input)
+			first_number = i;
+		if (numbers[i] == second_input)
+			second_number = i;
+	}
+	
+	if (operand == "+")
+	{
+		output = first_number + second_number; 
+	}
+	else if (operand == "-")
+	{
+		output = first_number - second_number;
+	}
+	else if (operand == "*")
+	{
+		output = first_number * second_number;
+	}
+	else if (operand == "/")
+	{
+		if (second_number == 0)
+		{
+			cout << "ope, can't divide by zero \n";
+			
+		}
+		else
+		{
+			output = first_number / second_number;
+		}
+	}
+
+	cout << "The result is " << output;
+}
+*/
+
+// Question 8 grains of rice 
+
+int main()
+{
+
 }
