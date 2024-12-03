@@ -243,6 +243,106 @@ int main()
 		++square;
 	}
 }
-*/
  // Questions 9 
 // calculate grains of rice until overflow 
+//  grains_of_rice becomes zero! 
+int main()
+{
+	int grains_of_rice_int = 1;
+	double grains_of_rice_double = 1; 
+
+	for (int i = 0; i < 64; ++i)
+	{
+		grains_of_rice_int = grains_of_rice_int * 2;
+		grains_of_rice_double = grains_of_rice_double * 2; 
+
+		cout << "Grains of rice int: " << grains_of_rice_int << "\t grains of rice double: " << grains_of_rice_double << " square: "<< i << "\n";
+	}
+}
+
+// Question 10 
+// Rock paper scissors 
+
+int main()
+{
+	Vector<char> next_move = { 'p', 'r', 's', 's'};
+	char player_move = 'r';
+	cout << "Let's play rock paper scissors, input your move when you are ready! (r = rock, s = scissors, p = paper)\n";
+
+	for( int move_index = 0; move_index < next_move.size(); ++move_index)
+	{
+		cout << "Let's play!\n";
+		cin >> player_move;
+		char current_computer_move = next_move[move_index];
+		if (current_computer_move == player_move)
+		{
+			cout << "we picked the same!\n";
+			continue;
+		}
+
+		switch (player_move)
+		{
+			case 'r':
+				if (current_computer_move == 'p')
+					cout << "I win! " << current_computer_move << " beats " <<  player_move << "\n";
+				break; 
+			case 'p':
+				if (current_computer_move == 's')
+					cout << "I win! " << current_computer_move << " beats " << player_move << "\n";
+				break; 
+			case 's':
+				if (current_computer_move == 'r')
+					cout << "I win! " << current_computer_move << " beats " << player_move << "\n";
+				break; 
+			default:
+				cout << "Please input r, s, or p\n";
+				continue;
+		}
+
+		cout << "You win " << player_move << " beats " << current_computer_move << "\n";
+
+	}
+	
+}
+*/
+
+// fine all  prime numbers between 1 adn 100, this is exercise 11 to 14!  
+
+vector<int> add_all_future_multiples(vector<int> sieved_list, int siev_number, int max)
+{
+	int current_multiple = siev_number;
+	for (int index = siev_number; current_multiple < max; ++index)
+	{
+		sieved_list[current_multiple] = 1;
+		current_multiple = index * siev_number;
+	}
+
+	return sieved_list;
+}
+
+int main()
+{
+	cout << "what is the max?\n";
+
+	int max = 100;
+	cin >> max;
+
+	vector<int> primes = {};
+	vector<int> sieved(max);
+
+	for (int num = 2; num < max; ++num)
+	{
+		if (sieved[num] == 0)
+		{
+			primes.push_back(num);
+			sieved = add_all_future_multiples(sieved, num, max);
+		}
+	}
+	cout << "All the primes between 1 and 100 \n";
+
+	for (int num : primes)
+	{
+		cout << num << "\n";
+	}
+
+}
