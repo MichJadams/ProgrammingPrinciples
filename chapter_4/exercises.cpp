@@ -304,7 +304,6 @@ int main()
 	}
 	
 }
-*/
 
 // fine all  prime numbers between 1 adn 100, this is exercise 11 to 14!  
 
@@ -345,4 +344,61 @@ int main()
 		cout << num << "\n";
 	}
 
+}
+*/
+// 12 
+vector<int> find_all_multiples(vector<int> sifted, int num, int max)
+{
+	int current_multiple = num; 
+	for (int ind = 1; current_multiple < max; ++ind)
+	{
+		sifted[current_multiple] = 1;
+		current_multiple = num * ind;
+
+	}
+	return sifted; 
+}
+
+vector<int> find_primes_between(vector<int> primes, int start, int end)
+{
+
+	vector<int> sifted(end);
+
+	for (int num = start; num < end; ++num)
+	{
+		if (sifted[num] == 0)
+		{
+			primes.push_back(num);
+			sifted = find_all_multiples(sifted, num, end);
+		}
+	}
+
+	return primes; 
+}
+
+// this does not work. I think I need to do like just the old fasioned method of dividing by everything under it 
+int main()
+{
+	int total_primes_length = 0;
+	cout << "How many primes do you want me to find?"; 
+	cin >> total_primes_length; 
+
+	vector<int> primes = {}; 
+	int start = 2; 
+	int end = 100; 
+
+	while (primes.size() < total_primes_length)
+	{
+		primes = find_primes_between(primes, start, end); // concat here. 
+		int temp = end;
+		start = primes[primes.size() -1 ];
+		end = temp + 100;
+		//cout << end << "\n";
+	}
+	cout << "Found them!";
+
+	for (int i = 0; i < total_primes_length; ++i)
+	{
+		cout << primes[i] << "\n";
+	}
 }
